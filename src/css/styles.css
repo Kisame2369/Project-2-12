@@ -37,9 +37,7 @@ button {
     padding: 8px 16px;
     width: 91px;
     height: 40px;
-
     background: #4e75ff;
-
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -52,6 +50,18 @@ button {
 
 button:hover {
     background: #6c8cff;
+}
+
+.btn {
+        width: 150px;
+        height: 40px;
+        margin: 20px auto;
+        display: none;
+    }
+
+.divv{
+ display: flex;
+ justify-content: center;
 }
 
 .gallery {

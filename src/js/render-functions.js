@@ -4,7 +4,7 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 const gallery = document.querySelector(".gallery");
-const loader = document.querySelector(".loader");
+const btn = document.querySelector(".btn");
 let lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
 
 export function clearGallery() {
@@ -21,7 +21,6 @@ export function showErrorMessage() {
 }
 
 export function renderPhotos(photos) {
-  clearGallery();
   if (photos.length === 0) {
     showErrorMessage();
     return;
@@ -45,4 +44,17 @@ export function renderPhotos(photos) {
 
   gallery.insertAdjacentHTML("beforeend", markup);
   lightbox.refresh();
+
+  smoothScroll() 
+}
+
+function smoothScroll() {
+  const firstCard = document.querySelector(".gallery-item");
+  if (firstCard) {
+    const cardHeight = firstCard.getBoundingClientRect().height;
+    window.scrollBy({
+      top: cardHeight * 2,
+      behavior: "smooth",
+    });
+  }
 }
