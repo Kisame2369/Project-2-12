@@ -1,5 +1,7 @@
 import { fetchPhotos } from "./js/pixabay-api.js";
 import { clearGallery, renderPhotos } from "./js/render-functions.js";
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
 
 export let page = 1;
 export let limit = 15;
@@ -33,7 +35,6 @@ async function handleSearch(event) {
 }
 
 document.querySelector("form").addEventListener("submit", handleSearch);
-
 btn.addEventListener("click", async () => {
 
   try {
